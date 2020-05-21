@@ -70,7 +70,7 @@ def predict_fn(input_data, model):
     #         data_X   - A sequence of length 500 which represents the converted review
     #         data_len - The length of the review
 
-    converted, leng = convert_and_pad(model.word_dict, input_data, pad=500)
+    converted, leng = convert_and_pad(model.word_dict, review_to_words(input_data), pad=500)
     data_X =  np.array(converted)
     data_len = np.array(leng)
 
@@ -92,4 +92,4 @@ def predict_fn(input_data, model):
 
     result = 1 if output >= 0.5 else 0 
 
-    return result
+    return np.array(result)
