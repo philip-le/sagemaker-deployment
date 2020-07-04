@@ -119,7 +119,7 @@ if __name__ == '__main__':
     
     ## TODO: Add args for the three model parameters: input_features, hidden_dim, output_dim
     # Model Parameters
-    parser.add_argument('--input_dim', type=int, default=2, metavar='IN',
+    parser.add_argument('--input_features', type=int, default=2, metavar='IN',
                         help='number of input features to model (default: 2)')
     parser.add_argument('--hidden_dim', type=int, default=7, metavar='H',
                         help='hidden dim of model (default: 7)')
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     ## TODO:  Build the model by passing in the input params
     # To get params from the parser, call args.argument_name, ex. args.epochs or ards.hidden_dim
     # Don't forget to move your model .to(device) to move to GPU , if appropriate
-    model = BinaryClassifier(args.input_dim, args.hidden_dim, args.output_dim).to(device)
+    model = BinaryClassifier(args.input_features, args.hidden_dim, args.output_dim).to(device)
 
 
     ## TODO: Define an optimizer and loss function for training
