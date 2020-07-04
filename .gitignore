@@ -110,3 +110,4 @@ Sentiment Analysis/aclImdb/
 # local folders
 data/
 cache/
+*.pkl
